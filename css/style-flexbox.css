@@ -1,0 +1,24 @@
+#container1 {
+    background: greenyellow;
+    width: 600px;
+    height: 200px;
+    display: flex;
+        flex-direction: row;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        
+}
+
+/* flex wrap serve para quebrar o final da div e mandar os elementos para baixo */
+.box{
+    background: purple;
+    width: 100px;
+    height: 100px;
+    margin: 0px; 
+}
+
+.ml-auto{
+    margin: 0 0 0 auto;
+}
