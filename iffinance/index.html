@@ -5,24 +5,52 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>IFFinance</title>
         <link rel="stylesheet" href="./css/style.css">
-
         <script>
-            var nome = "Kevinn";
-            let idade = 23;
-            const nascimento = "2000";
+            //var var1 = "pouco utilizado" // var pode ser redeclarada e gerar problemas
+            // let var2 = "muito utilizado" // let não pode ser redeclarada
+            // var2 = "outro valor"
+            const nome = "Renan" // const não pode ser redeclarada e nem ter seu valor alterado
+            const sobreNome = "Cavichi"
+            //const nomeCompleto = nome + " " + sobreNome // concatenar
 
-            const idAdms = [ 1, 5, 10, 80]
-            const user = {
-                id: 10,
-                nome: "Paulo",
-                email: "kevin4bmael@gmail.com"
+            const campoEscolhido = 'altura'
+
+            // função comum
+            function nomeCompleto(nome, sobreNome) {
+                return `${nome} ${sobreNome}`
             }
-            console.log(`ola ${idAdms.[3]}`)
 
-            console.log("Valor das variaveis :", nome, idade, nascimento)
-            console.log(`ola ${user.nome}`)
-            console.log(`Olá ${nome} que nasceu em ${nascimento} e hoje tem ${idade} anos`)
-            
+            // função anonima
+            const nCompleto = function (nome, sobreNome){
+                return `${nome} ${sobreNome}`
+            }
+
+            // função arrow
+            const nmCompleto = (nome, sobreNome) => {
+                return `${nome} ${sobreNome}`
+            }
+
+            const user = { // objeto
+                nome: "Paulo",
+                sobreNome: "da Silva",
+                email: "paulo@gmail.com",
+                altura: 1.75,
+                id: 10,
+                'Nome Completo': 'Paulo da Silva',
+                idAdmins: [4, 20, 30, 33],
+                endereco: {
+                    rua: "Rua dos Bobos",
+                    numero: 0
+                },
+                nomeCompleto: (nome, sobreNome) => {
+                    return `${nome} ${sobreNome}`
+                },
+                nCompleto: nomeCompleto
+            }
+
+            const idAdmins = [1, 5, 10, 80, {rua: 'Dos Bodos', numero: 0}]
+
+            console.log(`Olá ${user.nomeCompleto(user.nome, user.sobreNome)}, seja bem-vindo! ${idAdmins[4].numoro}`)
         </script>
     </head>
     <body>
@@ -48,7 +76,44 @@
         <main>
             <div class="wrapper">
                 <h1>Home</h1>
+
+                <input type="text" id="txtInput">
+
+                <button onclick="pegarTexto()">Pegar Texto</button>
+                <button onclick="mudar()">Mudar Cor Logo</button>
+
+                <div id="resultado"></div>
             </div>
         </main>
     </body>
+    <script>
+
+        let valor = 10
+        valor += 5
+        console.log(valor)
+
+        let corAtual = 'preto'
+
+        const mudar = () => {
+            const logo = document.getElementById('logo')
+
+            if(corAtual == 'preto'){
+                logo.style.background = "#FFF"
+                corAtual = 'branco'
+            } else {
+                logo.style.background = "#000"
+                corAtual = 'preto'
+            }
+             //logo.innerHTML += '<p>Novo Logo<p>'
+            console.log('Clicado...')
+        }
+
+        function pegarTexto () {
+            const txtInput = document.getElementById('txtInput')
+            const resultado = document.getElementById('resultado')
+
+            resultado.innerHTML = `<p>${txtInput.value}</p>`
+        }
+
+    </script>
 </html>
