@@ -15,17 +15,14 @@
 
             const campoEscolhido = 'altura'
 
-            // função comum
             function nomeCompleto(nome, sobreNome) {
                 return `${nome} ${sobreNome}`
             }
 
-            // função anonima
             const nCompleto = function (nome, sobreNome){
                 return `${nome} ${sobreNome}`
             }
 
-            // função arrow
             const nmCompleto = (nome, sobreNome) => {
                 return `${nome} ${sobreNome}`
             }
@@ -111,7 +108,6 @@
         function pegarTexto () {
             const txtInput = document.getElementById('txtInput')
             const resultado = document.getElementById('resultado')
-
             resultado.innerHTML = `<p>${txtInput.value}</p>`
         }
 
